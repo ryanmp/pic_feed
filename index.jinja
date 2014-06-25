@@ -16,12 +16,12 @@
 	{% if loop.index-1 == 0 %}
 		<div class="img-cont">
 			<div class="date">{{ dates[loop.index-1] }}</div>
-			<img src="img/{{ i }}.{{ exts[loop.index-1] }}">
+			<img src="imgs/{{ i }}.jpg">
 		</div>
 	{% else %}
 		<div class="img-cont">
 			<div class="date">{{ dates[loop.index-1] }}</div>
-			<img src="img/{{ i }}.{{ exts[loop.index-1] }}">
+			<img src="imgs/{{ i }}.jpg">
 		</div>
 	{% endif %}
 {% endfor %}
@@ -49,6 +49,8 @@
 		</tr>
 	</table>
 </div>
+
+<div id="copyright">All images copyright 2014 Ryan Phillips. All rights reserved.</div>
 
 </body>
 </html>
