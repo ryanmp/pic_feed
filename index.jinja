@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title }}</title>  
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+
+<div id="header">
+	<h1 title="{{ title }}">{{ title }}</h1>
+	<a href="http://www.rmkp.me">rmkp.me</a>
+</div>
+
+{% for i in names %}
+	{% if loop.index-1 == 0 %}
+		<div class="img-cont">
+			<div class="date">{{ dates[loop.index-1] }}</div>
+			<img src="img/{{ i }}.{{ exts[loop.index-1] }}">
+		</div>
+	{% else %}
+		<div class="img-cont">
+			<div class="date">{{ dates[loop.index-1] }}</div>
+			<img src="img/{{ i }}.{{ exts[loop.index-1] }}">
+		</div>
+	{% endif %}
+{% endfor %}
+
+<div id="pagination">
+	<table>
+		<tr>
+			<td class="prev">Previous</td>
+			<td class="current">1</td>
+			<td><a href="2">2</a></td>
+			<td><a href="3">3</a></td>
+			<td><a href="4">4</a></td>
+			<td class="next">Next</td>
+		</tr>
+	</table>
+</div>
+
+</body>
+</html>
