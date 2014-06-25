@@ -1,133 +1,110 @@
 *, *:before, *:after {
-  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
- }
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
 
-a{
+a {
+  text-decoration: none;
+  color: #6388cb;
+  font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 15pt; }
 
-   text-decoration: none;
-  color:#a6b;
-     font-family: Helvetica, Arial, "Lucida Grande", sans-serif; 
-    font-weight:400;
-     font-size:15pt;
-}
+body {
+  background-color: #fcfcfc;
+  margin: 50px;
+  color: #666666;
+  font-family: "Helvetica Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 200;
+  font-size: 14pt;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
 
-body{
-    background-color: #fcfcfc;
-    margin: 50px;
-    color:#555;
-    font-family: "Helvetica Light", Helvetica, Arial, "Lucida Grande", sans-serif; 
-    font-weight:100;
-    font-size:14pt;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-}
+.img-cont {
+  background-color: #fff;
+  margin: auto;
+  max-width: 850px;
+  padding: 20px;
+  display: block;
+  border: solid 1px #eee;
+  border-top-width: 0px; }
 
-.img-cont{
-   
-     background-color: #fff;
-    margin:auto;
-     max-width:850px;
-   padding:20px;
-    display: block;
-    border: solid 1px #eee;
-    border-top-width: 0px;
-}
+.first {
+  border-top-width: 1px;
+  margin-top: 0px; }
 
-.first{
-    border-top-width: 1px;
-    margin-top:0px;
-}
+img {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 80px;
+  margin: 0px auto;
+  display: block; }
 
-img{
-  max-width:100%; max-height:100%;
-     padding:80px;
-    margin: 0px auto;
-    display: block;
-}
-    
+#header {
+  position: relative;
+  color: #eee;
+  background-color: #111;
+  margin: auto;
+  max-width: 850px;
+  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 
-#header{
-  position:relative;
-  color:#eee;
-  background-color:#111;
-margin:auto;
-     max-width:850px;
-   padding:20px;
-   padding-top:0px;
-   padding-bottom:0px;
+h1 {
+  color: #eee;
+  text-transform: uppercase;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  display: inline-block;
+  font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 600;
+  font-size: 24pt;
+  line-height: 30pt;
+  text-shadow: 0px 0px 1px #000; }
 
-}
+#header a {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: absolute;
+  display: block;
+  right: 20px;
+  top: 0px;
+  line-height: 30pt; }
 
-h1{
-  color:#eee;
-text-transform:uppercase;
-  padding-top:0px;
-  padding-bottom:0px;
-  display:inline-block;
-   font-family: Helvetica, Arial, "Lucida Grande", sans-serif; 
-   font-weight:600;
-   font-size:24pt;
-   line-height:30pt;
-   text-shadow: 0px 0px 1px #000;
-}
-
-#header a{
- 
-  padding-top:20px;
-  padding-bottom:20px;
-
-  position:absolute;
-    display:block;
-  right:20px;
-  top:0px;
-     line-height:30pt;
-}
-
-#pagination{
-
-  margin:auto;
-  margin-top:10px;
-     max-width:850px;
-   padding:20px;
-   padding-top:0px;
-   padding-bottom:0px;
- 
-}
-   
-#pagination table{
-
-  margin:auto;
-}
+#pagination {
+  margin: auto;
+  margin-top: 10px;
+  max-width: 850px;
+  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 
 #pagination table {
+  margin: auto; }
 
-  border-collapse:collapse;
-}
-#pagination table td{
-   background-color:#fff;
-    padding:0px;
-    padding-left:0px;
-    padding-right:0px;
-  border: solid 1px #eee;
-}
+#pagination table {
+  border-collapse: collapse; }
 
-#pagination table td.current{
-    padding:4px;
-    padding-left:8px;
-    padding-right:8px;
-  font-weight:bold;
-}
+#pagination table td {
+  background-color: #fff;
+  padding: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border: solid 1px #eee; }
 
-#pagination table td.next, #pagination table td.prev{
- padding:4px;
-    padding-left:8px;
-    padding-right:8px;
-}
+#pagination table td.current {
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-weight: bold; }
 
- #pagination table td a{
-  padding:4px;
-    padding-left:8px;
-    padding-right:8px;
-  display:block;
-}
+#pagination table td.next, #pagination table td.prev {
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px; }
 
+#pagination table td a {
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: block; }

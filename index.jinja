@@ -29,12 +29,23 @@
 <div id="pagination">
 	<table>
 		<tr>
+			{% if which_page != 1 %}
+			<td class="prev"><a href="{{pages[which_page-2]}}">Previous</a></td>
+			{% else %}
 			<td class="prev">Previous</td>
-			<td class="current">1</td>
-			<td><a href="2">2</a></td>
-			<td><a href="3">3</a></td>
-			<td><a href="4">4</a></td>
+			{% endif %}
+			{% for i in pages %}
+				{% if loop.index == which_page %}
+				<td class="current">{{loop.index}}</td>
+				{% else %}
+				<td><a href="{{ i }}">{{loop.index}}</a></td>
+				{% endif %}
+			{% endfor %}
+			{% if which_page != num_pages %}
+			<td class="next"><a href="{{pages[which_page]}}">Next</a></td>
+			{% else %}
 			<td class="next">Next</td>
+			{% endif %}
 		</tr>
 	</table>
 </div>

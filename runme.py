@@ -1,11 +1,11 @@
-import os, jinja2, time, datetime
+import os, jinja2, time, datetime, math
 
 def main():
-	print "running main"
 	out = get_imgs()
 	render_template(out[0], out[1], out[2])
 
 def get_imgs():
+	print 'get image list'
 	path = os.getcwd()
 	ret_name = []
 	ret_ext = []
@@ -28,15 +28,46 @@ def get_imgs():
 
 
 def render_template(_names, _exts, _dates):
-	templateEnv = jinja2.Environment( loader= jinja2.FileSystemLoader( os.getcwd() ) )
-	template = templateEnv.get_template( "index.jinja" )
 
-	templateVars = { "title" : "miscellaneous images",
-	                 "names" : _names,
-	                 "exts" : _exts,
-	                 "dates" : _dates
-	               }
-	index = open('index.html', 'w+')
-	index.write( template.render( templateVars ) ) 
+	total_images = len(_names)
+	images_per_page = 5
+	num_pages = int(math.ceil(float(total_images)/images_per_page))
+
+	# generate list of html pages to be rendered
+	pages = []
+	for i in xrange(num_pages):
+		if (i == 0):
+			this_page = 'index.html'
+		else: 
+			this_page = str(i+1)+'.html'
+		pages.append(this_page)
+
+	# render all pages
+	for i in xrange(num_pages):
+
+		# calculate start and index index for picture range to be used on a given template
+		if i < (num_pages-1):
+			start_idx = i*images_per_page
+			end_idx = i*images_per_page + images_per_page
+		else:
+			start_idx = i*images_per_page
+			end_idx = None
+
+		print 'render template:', i
+		templateEnv = jinja2.Environment( loader= jinja2.FileSystemLoader( os.getcwd() ) )
+		template = templateEnv.get_template( "index.jinja" )
+
+		templateVars = { "title" : "miscellaneous images",
+		                 "names" : _names[start_idx:end_idx],
+		                 "exts" : _exts[start_idx:end_idx],
+		                 "dates" : _dates[start_idx:end_idx],
+		                 "num_pages": num_pages,
+		                 "pages" : pages,
+		                 "which_page": i+1
+		               }
+
+		index = open(pages[i], 'w+')
+		index.write( template.render( templateVars ) )
+
 
 main()
